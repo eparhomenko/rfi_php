@@ -1,3 +1,8 @@
 <?php
-echo shell_exec("ls / -ltr");
+$output=null;
+$resultCode=null;
+//get the memory info of a Ubuntu machine
+exec('free', $output, $resultCode);
+echo "Returned with status $resultCode and output:\n";
+print_r($output);
 ?>
